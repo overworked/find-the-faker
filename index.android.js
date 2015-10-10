@@ -59,7 +59,7 @@ class CheckInView extends React.Component {
           onChangeText={(username) => this.setState({username})}
           value={this.state.username}
         />
-        <Button style={{fontSize: 16, color: 'green', backgroundColor: '#f8f8f8', padding: 4}} onPress={this.onClickCreate.bind(this)}>
+      <Button style={{fontSize: 16, color: 'green', backgroundColor: '#f8f8f8', padding: 4}} onPress={this.onClickCreate.bind(this)}>
           Continue
         </Button>
       </View>
@@ -68,6 +68,9 @@ class CheckInView extends React.Component {
 }
 
 class ChatView extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <View style={styles.container}>
