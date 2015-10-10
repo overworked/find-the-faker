@@ -10,25 +10,60 @@ var {
   StyleSheet,
   Text,
   View,
+  Navigator
 } = React;
 
-var FindTheFaker = React.createClass({
-  render: function() {
+class FindTheFaker extends React.Component{
+  render() {
+    return (
+      <Navigator
+          initialRoute={{name: 'CheckInView', component: CheckInView}}
+          configureScene={() => {
+              return Navigator.SceneConfigs.FloatFromRight;
+          }}
+          renderScene={(route, navigator) => {
+              if (route.component) {
+                  return React.createElement(route.component, { navigator });
+              }
+          }}
+       />
+    );
+  }
+};
+
+class CheckInView extends React.Component {
+  onClickCreate() {
+    console.log('called');
+    this.props.navigator.push({
+      name: 'ChatView',
+      component: ChatView
+    });
+  }
+  render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
+        <Text>
+          Create a username???
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
+        <Text onPress={this.onClickCreate.bind(this)}>
+          Go to feed!
         </Text>
       </View>
     );
   }
-});
+}
+
+class ChatView extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text>
+          Chat View???
+        </Text>
+      </View>
+    );
+  }
+}
 
 var styles = StyleSheet.create({
   container: {
