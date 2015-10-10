@@ -1,3 +1,3 @@
-rootProject.name = 'FindTheFaker'
+rootProject.name = 'agar'
 
 include ':app'

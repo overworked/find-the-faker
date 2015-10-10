@@ -12,7 +12,7 @@ var {
   View,
 } = React;
 
-var FindTheFaker = React.createClass({
+var agar = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
@@ -50,4 +50,4 @@ var styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('FindTheFaker', () => FindTheFaker);
+AppRegistry.registerComponent('agar', () => agar);

@@ -13,7 +13,7 @@ var {
   TextInput
 } = React;
 
-class FindTheFaker extends React.Component{
+class Agar extends React.Component{
   render() {
     return (
       <Navigator
@@ -101,4 +101,4 @@ var styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('FindTheFaker', () => FindTheFaker);
+AppRegistry.registerComponent('agar', () => Agar);
