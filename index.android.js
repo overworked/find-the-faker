@@ -2,6 +2,10 @@
 
 var globalContext = {};
 
+var GameView = require('./views/gameView.js');
+
+console.log(GameView);
+
 var React = require('react-native');
 var Button = require('react-native-button');
 var {
@@ -43,8 +47,8 @@ class CheckInView extends React.Component {
       globalContext.username = this.state.username;
 
       this.props.navigator.push({
-        name: 'ChatView',
-        component: ChatView
+        name: 'GameView',
+        component: GameView
       });
     }
   }
@@ -62,21 +66,6 @@ class CheckInView extends React.Component {
       <Button style={{fontSize: 16, color: 'green', backgroundColor: '#f8f8f8', padding: 4}} onPress={this.onClickCreate.bind(this)}>
           Continue
         </Button>
-      </View>
-    );
-  }
-}
-
-class ChatView extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>
-          Chat View??? {globalContext.username}
-        </Text>
       </View>
     );
   }
